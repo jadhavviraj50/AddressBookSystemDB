@@ -33,3 +33,9 @@ INSERT INTO AddressBook VALUES ('Viraj','Jadhav','Panvel','Panvel','Maharastra',
 ('Mitali','Jadhav','Panvel','Panvel','Maharastra',410206,'0123456789','mitalijadhav@gmail.com');
 
 SELECT * FROM AddressBook;
+
+
+UC4: Ability to edit existing contact person using their name
+
+
+UPDATE AddressBook SET Address='Mumbai',PhoneNumber=0985632147 where FirstName='Mayuri';
