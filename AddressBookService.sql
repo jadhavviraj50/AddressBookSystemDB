@@ -47,3 +47,9 @@ UC5: Ability to delete person using person's name
 
 
 DELETE FROM AddressBook WHERE FirstName='Mitali';
+
+
+UC6: Ability to retrieve person belonging to city or state from the address book
+
+
+SELECT * FROM AddressBook WHERE City='Panvel' OR State='Maharastra';
