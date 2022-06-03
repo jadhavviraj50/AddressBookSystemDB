@@ -21,3 +21,15 @@ Zip INT,
 PhoneNumber VARCHAR(10),
 Email VARCHAR(100)
 );
+
+
+UC3 : Insert new contacts to AddressBook
+
+
+INSERT INTO AddressBook VALUES ('Viraj','Jadhav','Panvel','Panvel','Maharastra',410206,'0123456789','virajjadhav@gmail.com'),
+('Vaibhav','Jadhav','Calgary','Alberta','Canada',101256,'0123456789','vaibhavjadhav@gmail.com'),
+('Varad','Jadhav','Panvel','Panvel','Maharastra',410206,'0123456789','varadjadhav@gmail.com'),
+('Mayuri','Jadhav','Panvel','Panvel','Maharastra',410206,'0123456789','mayurijadhav@gmail.com'),
+('Mitali','Jadhav','Panvel','Panvel','Maharastra',410206,'0123456789','mitalijadhav@gmail.com');
+
+SELECT * FROM AddressBook;
