@@ -53,3 +53,9 @@ UC6: Ability to retrieve person belonging to city or state from the address book
 
 
 SELECT * FROM AddressBook WHERE City='Panvel' OR State='Maharastra';
+
+
+UC7: Ability to understand size of AddressBook by city and state
+
+
+SELECT COUNT(*) FROM AddressBook WHERE City='Panvel' AND State='Maharastra';
