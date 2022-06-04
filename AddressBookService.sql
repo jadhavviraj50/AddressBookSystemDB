@@ -59,3 +59,10 @@ UC7: Ability to understand size of AddressBook by city and state
 
 
 SELECT COUNT(*) FROM AddressBook WHERE City='Panvel' AND State='Maharastra';
+
+
+UC8: Ability to retrieve entries sorted alphabetically by person's name for a given city
+
+
+SELECT FirstName,City FROM AddressBook ORDER BY City ASC;
+SELECT FirstName,City FROM AddressBook ORDER BY City DESC;
