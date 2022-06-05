@@ -66,3 +66,16 @@ UC8: Ability to retrieve entries sorted alphabetically by person's name for a gi
 
 SELECT FirstName,City FROM AddressBook ORDER BY City ASC;
 SELECT FirstName,City FROM AddressBook ORDER BY City DESC;
+
+
+
+UC9: Ability to identify each address book with name and type
+
+
+ALTER TABLE AddressBook ADD FullName VARCHAR(100),TYPE VARCHAR(100);
+SELECT * FROM AddressBook
+UPDATE AddressBook SET FullName='Varad Jadhav', TYPE='Family' WHERE FirstName='Varad';
+UPDATE AddressBook SET FullName='Mayuri Jadhav', TYPE='Profession' WHERE FirstName='Mayuri';
+
+
+
