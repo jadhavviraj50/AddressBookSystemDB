@@ -167,6 +167,49 @@ select *from Employee_Department;
 INSERT INTO PersonsDetail_Type(PersonId,PersonTypeId,EmployeeID) VALUES(1,4,123),(2,3,456),(3,1,789),(4,2,244);
 select *from PersonsDetail_Type;
 
+------------------------------UC13-Ensuring All retrieve queries from UC6 to UC10 with new table-------------------------
+------------------------------UC6-Retrieve Person belonging to city Or State---------------------------------------------
+
+SELECT a.AddressBookId,a.AddressBookName,p.PersonId,p.FirstName,p.LastName,p.Address,p.City,p.State,p.Zip,
+p.PhoneNumber,p.Email_ID,persontype.PersonType,persontype.PersonTypeId FROM 
+PersonDetail  p
+INNER JOIN Address_Book a
+ON a.AddressBookId = p.AddressBookId AND (p.City='Alibag' OR p.State='Maharashtra')
+INNER JOIN PersonsDetail_Type  pt 
+On p.PersonId = pt.PersonId
+INNER JOIN PersonTypes  persontype 
+ON persontype.PersonTypeId = pt.PersonTypeId;
+
+
+-------------------------UC7-understand Size of AddressBook by city and state----------------------------
+
+Select Count(*) As Count,State from PersonDetail Group By State;
+Select Count(*) As Count,City from PersonDetail Group By City;
+
+select Count(city) from PersonDetail
+select * from PersonDetail
+
+--------------------------UC8-Retrieve entries sorted alphabetically by person name--------------------------
+
+SELECT a.AddressBookId,a.AddressBookName,p.PersonId,p.FirstName,p.LastName,p.Address,p.City,p.State,p.Zip,
+p.PhoneNumber,p.Email_Id,pt1.PersonType,pt.PersonTypeId FROM
+Address_Book a 
+INNER JOIN PersonDetail p ON a.AddressBookId = p.AddressBookId 
+INNER JOIN PersonsDetail_Type pt On pt.PersonId = p.PersonId
+INNER JOIN PersonTypes  pt1 ON pt1.PersonTypeId = pt.PersonTypeId Order By FirstName;
+
+--------------------------UC_9Retreive Number Of Persons Records Based On Person Types-----------------------------
+
+Select Count(a.PersonTypeId) As PersonCount,b.PersonType From 
+PersonsDetail_Type As a 
+INNER JOIN PersonTypes AS b ON b.PersonTypeId = a.PersonTypeId
+INNER JOIN PersonDetail AS c ON c.PersonId = a.PersonId Group By a.PersonTypeId,b.PersonType;
+
+----------------------------UC_10_Retreive Number Of Persons Records Based On AddressBook Names-------------------------
+
+Select Count(a.AddressBookId) As AddressBookCount,a.AddressBookName From 
+Address_Book As a 
+INNER JOIN PersonDetail AS pd ON pd.AddressBookId = a.AddressBookId Group By a.AddressBookName,pd.AddressBookId;
 
 
 
