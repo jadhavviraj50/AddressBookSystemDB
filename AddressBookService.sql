@@ -74,9 +74,9 @@ UC9: Ability to identify each address book with name and type
 
 ALTER TABLE AddressBook ADD FullName VARCHAR(100),TYPE VARCHAR(100);
 SELECT * FROM AddressBook
-UPDATE AddressBook SET FullName='Varad Jadhav', Type='Family' WHERE FirstName='Varad';
-UPDATE AddressBook SET FullName='Mayuri Jadhav', Type='Profession' WHERE FirstName='Mayuri';
-UPDATE AddressBook SET FullName='Vaibhav Jadhav', Type='Family' WHERE FirstName='Vaibhav';
+UPDATE AddressBook SET Type='Family' WHERE FirstName='Varad';
+UPDATE AddressBook SET Type='Profession' WHERE FirstName='Mayuri';
+UPDATE AddressBook SET Type='Family' WHERE FirstName='Vaibhav';
 
 
 UC10: Ability to get number of contact persons i.e. count by type
@@ -84,6 +84,17 @@ UC10: Ability to get number of contact persons i.e. count by type
 
 SELECT COUNT (*) FROM AddressBook WHERE Type='Family';
 SELECT COUNT (*) FROM AddressBook WHERE Type='Profession';
+
+
+UC11: Ability to add person to both friend and family
+
+
+alter table AddressBook DROP COLUMN FullName
+
+INSERT INTO AddressBook VALUES ('Nitesh','Gaikwad','Vidyanagar','Alibag','Maharashtra',402201,'7777568888','niteshgaikwad@gmail.com','Friend'),
+('Vidya','Jadhav','Neral','Karjat','Maharashtra',410209,'8888885666','vidyajadhav@gmail.com','Family');
+
+SELECT * FROM AddressBook;
 
 
 
